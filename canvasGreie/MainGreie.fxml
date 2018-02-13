@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import javafx.scene.canvas.Canvas?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.geometry.Insets?>
+
+
+<!--   Heller lage en group som har gridpane bakerst, slik at vi kan ha et canvas som ligger over? -->
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="canvasGreie.MainGreieController" onKeyPressed="#handle">
+	<VBox prefWidth="800" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.rowSpan="1">
+	<MenuBar fx:id="menuBar" useSystemMenuBar="true">
+		<menus>
+			<Menu text="Fil">
+				<items>
+               		<MenuItem text="Lukk" onAction="#exitEvent" />
+				</items>
+			</Menu>
+		</menus>
+	</MenuBar>
+	</VBox>
+	<!--  Canvas -->
+	<HBox styleClass="graphics" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="1" GridPane.rowSpan="1">
+		<Canvas fx:id="graphics"  width="600" height="600" />
+	</HBox>
+	
+	<VBox GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="1" GridPane.rowSpan="1" spacing="0">
+		<padding><Insets left="12"/></padding>
+		<HBox>
+		<padding><Insets top="20" left="60"/></padding>
+		<Button text="button1" onAction="#moveEvent"/> </HBox>
+		
+		<HBox>
+		<!--  <padding><Insets top="0" right="0" bottom="0" left="0"/></padding> -->
+		<Button text="button2" onAction="#moveLeftEvent" />
+		<Button text="button3" onAction="#moveDownEvent" />
+		<Button text="button4" onAction="#moveRightEvent"/> </HBox>
+		
+		
+	</VBox>
+</GridPane>
